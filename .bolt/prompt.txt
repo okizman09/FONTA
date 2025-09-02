@@ -1,0 +1,171 @@
+📄 Product Requirement Document (PRD)
+
+Project Name: EduMate – AI Study Companion
+Hackathon Deadline: September 2, 2025
+Prepared by: [Team Name]
+
+Problem Statement
+Students (especially undergraduates and postgraduates in Nigeria and Africa) struggle with:
+
+Understanding difficult homework without direct teacher support.
+
+Revising notes effectively for exams and research.
+
+Accessing reliable study tools (global AI tools are foreign-focused, expensive, or inaccessible).
+
+👉 EduMate solves this by providing a localized, affordable, AI-powered study companion with features tailored to real academic needs.
+
+Target Audience
+Primary: Undergraduate & Postgraduate students (universities, polytechnics, open universities).
+
+Secondary: Secondary school students (WAEC/JAMB prep).
+
+Language: English only for MVP.
+
+Core Features (MVP) A. AI Note-to-Quiz Generator (Must Work 100%)
+Input: Text notes or PDF upload.
+
+Output: AI-generated quizzes in two formats:
+
+MCQs (with correct answers marked).
+
+Short answer questions (with model answers).
+
+Save quizzes in Supabase for later review.
+
+Track: number of quizzes generated, accuracy, streaks.
+
+B. AI Digital Library Summarizer (Must Work 100%)
+
+Input: Text notes or PDF upload.
+
+Output: Concise, structured summary (bullet points).
+
+Store summaries in Supabase for later retrieval.
+
+C. AI Homework Helper (Prioritized, but droppable if time runs out)
+
+Input: User pastes question (Math, Science, or Essay).
+
+Output: Step-by-step explanation (not just final answer).
+
+If Claude API supports: accept images (OCR) or document uploads for analysis.
+
+Differentiation (Why EduMate Wins vs Free Apps) Feature Free AI Apps (ChatGPT/Quizlet) EduMate Local exam style ❌ Generic ✅ Tailored to WAEC, JAMB, Uni exams Essay & humanities ❌ Weak feedback ✅ Supported in Homework Helper PDF uploads ❌ Limited ✅ Supported in Summarizer & Quiz User progress tracking ❌ Rare ✅ Accuracy, streaks, usage stats Payment ❌ Requires VPN + $ cards ✅ IntaSend mock, local-friendly Accessibility ❌ Foreign focus ✅ Nigerian/African student-first
+Monetization (MVP Mock Only)
+Free tier: Limited daily quizzes + 1 homework explanation + 1 summary.
+
+Premium: Unlimited access.
+
+Mock flow: IntaSend button → fake success message.
+
+Tech Stack & Tools
+Frontend/UI: MGX (clean 3-tab interface).
+
+Backend: Boot.new scaffold → Node.js/Flask for API.
+
+Database: Supabase (store users, quizzes, summaries, stats).
+
+AI Models: Claude.ai for quiz generation, summarization, homework explanation.
+
+If Claude offers ML templates for study tools → reuse.
+
+If Claude API allows OCR for images → integrate.
+
+Deployment: Bolt.new (host MVP).
+
+Collaboration: Private GitHub repo for version control.
+
+Payments: Mock IntaSend sandbox.
+
+User Flow (Web App MVP)
+Login/Signup → user account created (Supabase auth).
+
+Choose from 3 tabs:
+
+Summarize Notes (paste/upload PDF → summary).
+
+Generate Quiz (paste/upload PDF → MCQs & short-answer quiz).
+
+Homework Help (paste question → step-by-step explanation).
+
+Save results to Supabase.
+
+Track streaks & usage (gamification lite).
+
+If usage limit hit → “Go Premium” mock IntaSend flow.
+
+UI/UX
+Minimalist design (fast hackathon build).
+
+3-tab navigation (Summarizer, Quiz, Homework).
+
+Consistent EduMate branding (logo + 1-2 theme colors).
+
+Accessible (readable fonts, simple buttons).
+
+Timeline & Cut-Off
+Thursday (Today): PRD finalized, Bolt.new boilerplate, Supabase setup.
+
+Friday: Summarizer feature + quiz generator text input working.
+
+Saturday (before midnight):
+
+Quiz generator fully working (with PDF upload).
+
+Summarizer fully working.
+
+Homework helper basic version running.
+
+Feature freeze.
+
+Sunday: Testing, polish, IntaSend mock, deploy.
+
+Monday: Recorded demo video from Bolt.new preview.
+
+Tuesday: Submit repo, demo link, slides, pitch rehearsal.
+
+Risks & Mitigation
+Claude API limits: Cache sample responses for demo.
+
+OCR complexity: If Claude OCR not available, fallback to text-only input.
+
+Time crunch: Homework Helper will be dropped first if needed.
+
+Deployment failure: Recorded demo video as fallback.
+
+Ownership & Responsibility
+Claude Prompt Engineering: Shared by team (all members can test prompts).
+
+Supabase Setup: 1 member leads, but others test.
+
+UI (MGX): Everyone contributes, keep design minimal.
+
+Version Control: Private repo, all commits through pull requests.
+
+Testing: Team session before feature freeze.
+
+
+i want you to rewrite the entire code so that it becomes functional, the summarize actually summarizes through different input methods and the other tabs also, i have added the api key for both the superbase and hugging face to performs the backend function, im going to need to add paystack as payment method, write the neccesary code for the integration so i just need to add the api key, make the ui very neat and friendly chat like, heres the initial prd that i used on bolt.new, but it generated  mocks for me, i want actual functionality, ask relevant question on how it will be before building,
+
+
+
+for now use the api tools that is efficient and free that's why i chose hugging face initially if theres any better and free use, Mix of MCQ and short answer questions, the question should have a section for users to select between easy medium and hard difficulty level, the summary should be in the format of the pdf i attached , Step-by-step solutions for math problems, Conceptual explanations for science, Essay structure guidance for writing,800 monthly,  set up webhook handling for payment verification, i want users to have limitations they should be able to generate up to 15 times across all section, users will have to wait for 6 hours afer limit has been hit, promt user to upgrade once limit has been hit, should be able to accept all input method and should be in a chat like layout (PDFs (lecture notes, textbooks)
+Images (handwritten notes, whiteboards)
+Word documents
+Audio recordings (lectures)
+Text input), 15 across all tabs per day, limit resets every 6hours, users should be able to Save and revisit old summaries/quizzes, Export their study materials,
+Share quizzes with classmates, Nigerian university exam styles
+Nigerian Context: Any specific features for local education?
+
+
+
+
+replace logo with this and anything that has to do with edumate to FONTA,   i tried uploading a pdf and it faild to fetch any summary, kidly check and make sure everything working in the back end and i also have the api key ready just replace the example .env file with the actual env file so i can copy and paste the api keys there
+
+
+
+
+
+
+replace logo with this and anything that has to do with edumate to FONTA,   i tried uploading a pdf and it faild to fetch any summary, kidly check and make sure everything working in the back end and i also have the api key ready just replace the example .env file with the actual env file so i can copy and paste the api keys there
